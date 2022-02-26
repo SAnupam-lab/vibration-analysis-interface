@@ -1,9 +1,8 @@
 # vibration-analysis-interface
-A full stack project for the analysis of vibration signals using time and frequency techniques applied on public dataset signals.
+A full stack project for the analysis of vibration data using time and frequency techniques applied on public dataset signals.
 
 ## Development tools used in this project
 - FastAPI: backend
-- React: frontend
 - Docker: image containerization
 - Jenkins: CI/CD pipeline
 
