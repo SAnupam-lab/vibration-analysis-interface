@@ -4,8 +4,7 @@ A full stack project for the analysis of vibration signals using time and freque
 ## Development tools used in this project
 - FastAPI: backend
 - React: frontend
-- Docker: images containerization
-- Kubernetes: container orchestration
+- Docker: image containerization
 - Jenkins: CI/CD pipeline
 
 ## Vibration analysis techniques used in this project
