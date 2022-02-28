@@ -129,7 +129,5 @@ dmypy.json
 .pyre/
 
 # Custom files and folders
-**/__pycache__/
-app/datasets/1
-**/app/datasets/1
-.app/datasets/1
+!**/__pycache__/
+!**/app/datasets/1/
