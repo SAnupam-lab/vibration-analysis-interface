@@ -130,4 +130,6 @@ dmypy.json
 
 # Custom files and folders
 **/__pycache__/
-app/datasets/
+app/datasets/1
+**/app/datasets/1
+.app/datasets/1

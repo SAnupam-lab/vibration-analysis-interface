@@ -19,7 +19,7 @@ class Visualization:
         self.max_spectrum = 20
         self.colors = ["#0099ff", "#ff9900", "#009933", "#990099"]
         self.maps = ["RMS", "Variance", "Peak-to-peak"]
-        self.figures = {}
+        self.figure = None
 
     # Time features plot
     def plot_time_features(self, time_features):
@@ -31,7 +31,8 @@ class Visualization:
             key = keys[i]
             fig.add_trace(go.Scatter(y=time_features[key], mode="lines", line=dict(color=self.colors[i])), row=i+1, col=1)
         fig.update_layout(autosize=True, showlegend=False)
-        self.figures["time_features"] = fig.to_json()
+        fig.show()
+        self.figure = fig.to_json()
         return fig
 
     # Spectrum plot
@@ -53,10 +54,13 @@ class Visualization:
             zaxis=dict(title='Amplitude', zeroline=False),
             aspectmode='manual', 
             aspectratio=dict(x=1.0, y=1.2, z=0.6)))
-        self.figures["spectrum"] = fig.to_json()
+        fig.show()
+        self.figure = fig.to_json()
         return fig
 
     # Figures generation
-    def run(self, processing):
-        self.plot_time_features(processing.time_features)
-        self.plot_spectrum(processing.frequency_features)
+    def run(self, processing, figure):
+        if figure == "time_features":
+            self.plot_time_features(processing.time_features)
+        elif figure == "spectrum":
+            self.plot_spectrum(processing.frequency_features)

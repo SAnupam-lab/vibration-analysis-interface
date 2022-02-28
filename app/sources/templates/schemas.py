@@ -14,3 +14,4 @@ class Input(BaseModel):
     channel: str
     slice_start: int
     slice_end: int
+    figure: str

@@ -24,8 +24,8 @@ async def run_analysis(input: schemas.Input):
         processing = Processing(sampling_frequency)
         processing.run(samples)
         visualization = Visualization()
-        visualization.run(processing)
-        data = visualization.figures
+        visualization.run(processing, input.figure)
+        data = visualization.figure
         status = "success"
     except:
         data = None
