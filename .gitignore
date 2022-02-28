@@ -129,6 +129,5 @@ dmypy.json
 .pyre/
 
 # Custom files and folders
-!app/datasets/
 app/datasets/*
 !app/datasets/.gitkeep
