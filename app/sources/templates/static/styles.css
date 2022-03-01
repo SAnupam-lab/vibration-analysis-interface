@@ -1,0 +1,36 @@
+/* Global variables */
+:root {
+    --figure: #ffffff;
+    --grad1: rgb(248,202,120);
+    --grad2: rgba(248,202,120,0.6831955922865014) 30%;
+    --grad3: rgba(250,189,136,1) 92%
+}
+
+/* General */
+.header, .options, .footer {
+    background: var(--grad1);
+    background: radial-gradient(circle, var(--grad2), var(--grad3));
+}
+
+/* Cabeçalho */ 
+.header {
+    height: 10%;
+    text-align: center;
+}
+
+/* Options area */ 
+.options {
+    height: 10%;
+}
+
+/* Figure area */ 
+.figure {
+    height: 70%;
+    background-color: var(--figure);
+}
+
+/* Footer */ 
+.footer {
+    height: 10%;
+    text-align: center;
+}

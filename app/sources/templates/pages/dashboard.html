@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+{% block content %}
+
+    <div class="header">
+        VAI - Vibration Analysis Interface
+    </div>
+    <div class="options">
+        <select name="datasets" id="datasets">
+            {% for key, value in datasets.items() %}
+                <option value={{ key }}>{{ value }}</option>
+            {% endfor %}
+        </select>
+        <select name="channels" id="channels">
+            <option value="x">x</option>
+            <option value="x">y</option>
+            <option value="x">z</option>
+        </select>
+    </div>
+    <div class="figure">
+        Figure
+    </div>
+    <div class="footer">
+        Developed by Leonardo Godói (https://github.com/lfgodoi)        
+    </div>
+
+{% endblock %}
