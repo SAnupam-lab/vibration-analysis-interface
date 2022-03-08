@@ -1,4 +1,4 @@
-// Alteração da figura
+// Figure update
 function showFigure() {
     var dataset = $("#datasets").val();
     var channel = $("#channels").val();
@@ -30,7 +30,7 @@ function showFigure() {
     });
 }
 
-// Alteração da figura pelo dropdown de figura
+// Figure update triggered by any dropdown change
 $(document).ready(function() {
     showFigure();
     $("select").on("change", function() {
@@ -38,8 +38,7 @@ $(document).ready(function() {
     });
 });
 
-// Ajuste do tamanho da figura quando a janela é redimensionada
+// Figure size adjustment triggered by window resizing
 $(window).resize(function(){
     showFigure();
 });
-

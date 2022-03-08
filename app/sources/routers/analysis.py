@@ -7,7 +7,6 @@ Analysis API
 # Importing packages and modules
 from fastapi import APIRouter, Request
 from fastapi.encoders import jsonable_encoder
-from sources.templates import schemas
 from sources.classes.dao import DAO
 from sources.classes.processing import Processing
 from sources.classes.visualization import Visualization
