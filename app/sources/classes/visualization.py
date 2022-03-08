@@ -31,7 +31,6 @@ class Visualization:
             key = keys[i]
             fig.add_trace(go.Scatter(y=time_features[key], mode="lines", line=dict(color=self.colors[i])), row=i+1, col=1)
         fig.update_layout(autosize=True, showlegend=False)
-        fig.show()
         self.figure = fig.to_json()
         return fig
 
@@ -54,7 +53,6 @@ class Visualization:
             zaxis=dict(title='Amplitude', zeroline=False),
             aspectmode='manual', 
             aspectratio=dict(x=1.0, y=1.2, z=0.6)))
-        fig.show()
         self.figure = fig.to_json()
         return fig
 

@@ -21,4 +21,4 @@ router = APIRouter(prefix="/dashboard", tags=["dashboard"])
 async def open_dashboard(request: Request):
     dao = DAO()
     datasets = dao.read_datasets()
-    return templates.TemplateResponse("dashboard.html", {"request": request, "datasets": datasets})
+    return templates.TemplateResponse("index.html", {"request": request, "datasets": datasets})

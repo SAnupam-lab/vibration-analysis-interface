@@ -10,7 +10,7 @@ from typing import List
 
 # Input model
 class Input(BaseModel):
-    dataset_id: int
+    dataset_id: str
     channel: str
     slice_start: int
     slice_end: int

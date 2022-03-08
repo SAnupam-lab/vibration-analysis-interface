@@ -5,7 +5,8 @@ Analysis API
 """
 
 # Importing packages and modules
-from fastapi import APIRouter
+from fastapi import APIRouter, Request
+from fastapi.encoders import jsonable_encoder
 from sources.templates import schemas
 from sources.classes.dao import DAO
 from sources.classes.processing import Processing
@@ -16,18 +17,25 @@ router = APIRouter(prefix="/analysis", tags=["analysis"])
 
 # Endpoint
 @router.post("/")
-async def run_analysis(input: schemas.Input):
+async def run_analysis(request: Request):
+    form = await request.form()
     try:
-        dao = DAO(input.dataset_id, input.channel)
+        data = jsonable_encoder(form)
+        dataset_id = data["dataset_id"]
+        channel = data["channel"]
+        slice_start = float(data["slice_start"])
+        slice_end = float(data["slice_end"])
+        figure = data["figure"]
+        dao = DAO(dataset_id, channel)
         sampling_frequency = dao.read_sampling_frequency()      
-        samples = dao.read_samples(input.slice_start, input.slice_end)
+        samples = dao.read_samples(slice_start, slice_end)
         processing = Processing(sampling_frequency)
         processing.run(samples)
         visualization = Visualization()
-        visualization.run(processing, input.figure)
-        data = visualization.figure
+        visualization.run(processing, figure)
+        content = visualization.figure
         status = "success"
     except:
-        data = None
+        content = "empty"
         status = "fail"
-    return {"data": data, "status": status}
+    return jsonable_encoder({"content": content, "status": status})
