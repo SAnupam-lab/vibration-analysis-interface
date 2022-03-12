@@ -1,15 +1,16 @@
 // Figure update
 function showFigure() {
-    var dataset = $("#datasets").val();
+    var datasetId = $("#datasets").val();
     var channel = $("#channels").val();
     var figure = $("#figures").val();
+    var sliceEnd = $("#slice-end").val();
     $.ajax({
         url : '/analysis',
         type : 'POST',
-        data : { dataset_id: dataset,
+        data : { datasetId: datasetId,
                  channel: channel,
-                 slice_start: 10,
-                 slice_end: 90,
+                 sliceStart: 0,
+                 sliceEnd: sliceEnd,
                  figure: figure },
         success: function(data) {
             var slot = document.getElementById("figure");
@@ -42,3 +43,15 @@ $(document).ready(function() {
 $(window).resize(function(){
     showFigure();
 });
+
+
+
+
+
+
+
+
+
+
+
+

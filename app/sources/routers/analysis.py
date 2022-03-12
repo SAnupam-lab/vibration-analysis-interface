@@ -20,10 +20,11 @@ async def run_analysis(request: Request):
     form = await request.form()
     try:
         data = jsonable_encoder(form)
-        dataset_id = data["dataset_id"]
+        print(data)
+        dataset_id = data["datasetId"]
         channel = data["channel"]
-        slice_start = float(data["slice_start"])
-        slice_end = float(data["slice_end"])
+        slice_start = float(data["sliceStart"])
+        slice_end = float(data["sliceEnd"])
         figure = data["figure"]
         dao = DAO(dataset_id, channel)
         sampling_frequency = dao.read_sampling_frequency()      

@@ -2,23 +2,31 @@
 {% block content %}
 
     <div class="header">
-        VAI - Vibration Analysis Interface
+        <h4>VAI - Vibration Analysis Interface</h4>
     </div>
     <div class="options">
-        <select name="datasets" id="datasets">
+        Dataset:
+        <select name="datasets" class="select-datasets" id="datasets">
             {% for key, value in datasets.items() %}
                 <option value={{ key }}>{{ value }}</option>
             {% endfor %}
         </select>
-        <select name="channels" id="channels">
+        Channel:
+        <select name="channels" class="select-channels" id="channels">
             <option value="x">x</option>
             <option value="y">y</option>
             <option value="z">z</option>
         </select>
-        <select name="figures" id="figures">
-            <option value="time_features">Time Features</option>
+        Figure:
+        <select name="figures" class="select-figures" id="figures">
+            <option value="time-features">Time Features</option>
             <option value="spectrum">Spectrum</option>
         </select>
+        Slice:
+        <div class="div-slice">
+            <p>50</p>
+            <input type="range" min="1" max="100" value="100" class="slider-slice" id="slice-end">
+        </div>
     </div>
     <div class="figure" id="figure">
         Figure

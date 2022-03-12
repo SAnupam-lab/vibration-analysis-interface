@@ -58,7 +58,7 @@ class Visualization:
 
     # Figures generation
     def run(self, processing, figure):
-        if figure == "time_features":
+        if figure == "time-features":
             self.plot_time_features(processing.time_features)
         elif figure == "spectrum":
             self.plot_spectrum(processing.frequency_features)

@@ -6,21 +6,30 @@
     --grad3: rgba(250,189,136,1) 92%
 }
 
-/* General */
+/* Global styles */
+html * {
+    font-family: Courier !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* All sections */
 .header, .options, .footer {
     background: var(--grad1);
     background: radial-gradient(circle, var(--grad2), var(--grad3));
 }
 
-/* Cabeçalho */ 
+/* Header */ 
 .header {
     height: 10%;
     text-align: center;
+    font-size: 26px;
 }
 
 /* Options area */ 
 .options {
     height: 10%;
+    text-align: center;
 }
 
 /* Figure area */ 
@@ -34,3 +43,45 @@
     height: 10%;
     text-align: center;
 }
+
+/* Select menus */
+select {
+    border-radius: 5px;
+    border: none;
+}
+
+/* Dataset select */
+.select-datasets {
+    width: 30%;
+}
+
+/* Channel select */
+.select-channels {
+    width: 5%;
+}
+
+/* Figure select */
+.select-figures {
+    width: 20%;
+}
+
+/* Slice slider */
+.slider-slice {
+    width: 20%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
